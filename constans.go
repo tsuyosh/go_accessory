@@ -10,7 +10,6 @@ import (
 	"github.com/kylelemons/gousb/usb"
 )
 
-// #include <linux/usb/ch9.h>
 // #include "f_accessory.h"
 import "C"
 
@@ -31,8 +30,8 @@ const (
 
 // requestType
 const (
-	RTYPE_IN  = (C.USB_DIR_IN | C.USB_TYPE_VENDOR)
-	RTYPE_OUT = (C.USB_DIR_OUT | C.USB_TYPE_VENDOR)
+	RTYPE_IN  = (uint8(usb.ENDPOINT_DIR_IN) | usb.REQUEST_TYPE_VENDOR)
+	RTYPE_OUT = (uint8(usb.ENDPOINT_DIR_OUT) | usb.REQUEST_TYPE_VENDOR)
 )
 
 // requests
